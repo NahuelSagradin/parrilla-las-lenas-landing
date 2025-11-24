@@ -1,5 +1,20 @@
 // Esperamos a que todo el HTML se cargue antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", function () {
+  // --- Limitar fecha/hora mínima a hoy en adelante ---
+  const fechaInput = document.getElementById("fecha");
+  if (fechaInput) {
+    const now = new Date();
+
+    // Ajuste para que el datetime-local tome bien la zona horaria
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+
+    // Formato "YYYY-MM-DDTHH:MM"
+    const minDateTime = now.toISOString().slice(0, 16);
+    fechaInput.min = minDateTime;
+    // Si querés, también seteamos el valor por defecto:
+    fechaInput.value = minDateTime;
+  }
+
   // 1. Seleccionamos el formulario por su ID
   const form = document.getElementById("whatsappForm");
 
