@@ -58,9 +58,9 @@ h1, h2, h3, h4, h5, .font-serif {
 /* --- 3. SECCIONES ESPECÍFICAS --- */
 
 /* Hero Section: Sombra al texto para que se lea sobre la foto */
-.hero-section h1, 
-.hero-section p {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+.hero-video-container h1, 
+.hero-video-container p {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.75);
 }
 
 /* Tarjetas del Menú y Formulario */
@@ -149,4 +149,142 @@ footer h5 {
 .hero-video-container .content {
     z-index: 1; /* El texto va arriba de todo */
     position: relative;
+}
+
+
+/* Ajuste de tamaño del H1 en mobile */
+@media (max-width: 576px) {
+    .hero-video-container h1 {
+        font-size: 2.2rem;   /* antes era display-3 (~4.0rem) */
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-video-container h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-video-container .content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* Compensa la altura de la navbar fija cuando se navega por anclas */
+section {
+    scroll-margin-top: 90px; /* ajustable según tu navbar */
+}
+
+/*Botón flotante de WhatsApp*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Sección del menú: estilo carta sobre fondo calido*/
+.menu-section {
+    background-color: #ffffff; /*fondo bien claro para el texto y los precios */
+    position: relative;
+    /* Agrego un borde superior sutil tipo detalle dorado */
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.menu-section .container {
+    max-width: 1100px;
+}
+
+
+/*Estilo para las cartas menú*/
+.menu-section .card {
+    border-radius: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-section .card-title {
+    font-size: 1.35rem;
+    font-family: var(--font-titulos);
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.menu-section .card-text {
+    font-size: 0.9rem;
+    color: #6c6c6c;
+    line-height: 1.5;
+}
+
+.menu-section .badge {
+    font-size: 0.9rem;
+    padding: 0.5em 1.1em;
+    border-radius: 20px;
+    letter-spacing: 0.6px;
+    margin-top: 10px;
+}
+
+/* Hover elegante */
+.menu-section .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen premium para las cartas del menú */
+.menu-section .menu-img {
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0; /* se fusiona con la card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Sección de eventos: look premium */
+#eventos {
+    background: linear-gradient(180deg, #7a222a 0%, #212529 55%, #111111 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* Contenido más angosto para look elegante*/
+#eventos .container {
+    max-width: 760px;
+}
+
+/* Ajustes finos de texto */
+#eventos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#eventos p {
+    line-height: 1.7;
+}
+
+/* Botón premium en la sección de eventos */
+#eventos a.btn {
+    border: 2px solid var(--color-dorado);
+    color: var(--color-dorado);
+    padding: 0.8rem 2.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#eventos a.btn:hover {
+    background-color: var(--color-dorado);
+    color: #212529;
+    box-shadow: 0 0 14px rgba(212, 175, 55, 0.6);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
 }
