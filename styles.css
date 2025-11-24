@@ -1,0 +1,152 @@
+/* --- 1. VARIABLES Y GENERALES --- */
+:root {
+    /* Paleta "Neobodegón" */
+    --color-vino: #a3333d;       /* Rojo Ladrillo/Vino */
+    --color-vino-dark: #7a222a;  /* Vino oscuro para hovers */
+    --color-carbon: #212529;     /* Gris Carbón (Bootstrap Dark) */
+    --color-dorado: #d4af37;     /* Dorado Mate para detalles */
+    --font-titulos: 'Playfair Display', serif;
+    --font-cuerpo: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-cuerpo);
+    color: #4a4a4a; /* Gris oscuro para textos, no negro puro */
+}
+
+/* Aplicar tipografía elegante a títulos */
+h1, h2, h3, h4, h5, .font-serif {
+    font-family: var(--font-titulos);
+    font-weight: 700;
+}
+
+/* --- 2. OVERRIDES DE BOOTSTRAP (Pisando estilos) --- */
+
+/* Transformamos el btn-danger en nuestro color Vino */
+.btn-danger {
+    background-color: var(--color-vino);
+    border-color: var(--color-vino);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: var(--color-vino-dark);
+    border-color: var(--color-vino-dark);
+    transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+/* Textos destacados en rojo */
+.text-danger {
+    color: var(--color-vino) !important;
+}
+
+/* Ajustes al Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-dorado) !important;
+}
+
+/* --- 3. SECCIONES ESPECÍFICAS --- */
+
+/* Hero Section: Sombra al texto para que se lea sobre la foto */
+.hero-section h1, 
+.hero-section p {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Tarjetas del Menú y Formulario */
+.card {
+    border: none; /* Quitamos bordes duros */
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover en las tarjetas del menú */
+#menu .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.15)!important;
+}
+
+/* Badges (Etiquetas de precio/recomendado) */
+.badge {
+    padding: 0.6em 1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* --- 4. FORMULARIO DE RESERVAS --- */
+/* Inputs más modernos (solo borde inferior o estilo limpio) */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-vino);
+    box-shadow: 0 0 0 0.25rem rgba(163, 51, 61, 0.25); /* Resplandor color vino */
+    background-color: #fff;
+}
+
+/* Encabezado del formulario */
+.card-header {
+    background: linear-gradient(45deg, var(--color-vino), var(--color-vino-dark)) !important;
+}
+
+/* --- 5. DETALLES FINALES --- */
+/* Separación de letras para subtítulos pequeños */
+.ls-2 {
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* Footer sutil */
+footer h5 {
+    color: var(--color-dorado); /* Títulos del footer en dorado */
+}
+
+/* Estilos para el Video de Fondo */
+.hero-video-container {
+    position: relative;
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave: hace que el video cubra todo sin deformarse */
+    z-index: -2; /* Lo manda al fondo de todo */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa negra semitransparente (50%) */
+    z-index: -1; /* Encima del video, debajo del texto */
+}
+
+.hero-video-container .content {
+    z-index: 1; /* El texto va arriba de todo */
+    position: relative;
+}
