@@ -430,3 +430,66 @@ footer .copyright {
     font-size: 0.85rem;
     margin-top: 3rem;  /* espacio respecto al bloque de arriba */
 }
+
+/* Mostrar solo el video horizontal en desktop */
+.video-desktop { display: block; }
+.video-mobile { display: none; }
+
+/* En pantallas móviles, usar el video vertical */
+@media (max-width: 768px) {
+    .video-desktop { display: none; }
+    .video-mobile { 
+        display: block;
+        object-fit: cover; 
+    }
+}
+
+.delivery-badge {
+    background: rgba(0,0,0,0.55);
+    display: inline-block;
+    padding: .38rem 1.1rem;
+    font-size: .87rem;
+    border-radius: 40px;
+    font-weight: 500;
+    margin-bottom: 32px;
+    letter-spacing: .35px;
+    backdrop-filter: blur(4px);  /* se ve MUY bien */
+    border: 1px solid rgba(255,255,255,.20);
+}
+
+/* Destacado de Delivery en Nosotros */
+.alert-delivery {
+    background-color: #fff3e4; /* cálido, no rompe estética */
+    border-left: 4px solid var(--color-vino);
+    padding: .9rem 1.2rem;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 500;
+    color: #333;
+}
+.alert-delivery span {
+    color: var(--color-vino-dark);
+    font-weight: 600;
+}
+
+/* Botón para Carta PDF */
+.btn-menu-pdf {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    border-radius: 999px;              /* pill */
+    border: 1px solid var(--color-dorado);
+    color: var(--color-dorado);
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.btn-menu-pdf:hover {
+    background-color: var(--color-dorado);
+    color: #212529;
+    box-shadow: 0 0 14px rgba(212, 175, 55, 0.45);
+    transform: translateY(-1px);
+}
